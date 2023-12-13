@@ -1,0 +1,41 @@
+.lbl-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.lbl-description {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.lbl-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: deeppink;
+}
+
+.img-item {
+  height: 100px;
+}
+
+.card-item {
+  width: 400px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.div-buttons {
+  display: flex;
+}
+
+.btn-edit {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-delete{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

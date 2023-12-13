@@ -1,0 +1,19 @@
+<!--<p *ngIf="isVisible">list-item works!</p>-->
+<!--<button mat-raised-button color="accent" (click)="onChange()">Accent</button>-->
+<!--<p *ngFor="let i of [1,2,3,4,5]">Alex {{i}}</p>-->
+<!--<p>{{title}}</p>-->
+<!-- ngIf = directiva care ne ajuta sa ascundem/afisam elemente in functie de o conditie true sau false -->
+<!--ngFor = directiva care ne ajuta sa afisam un Array in HTML-->
+<mat-card class="card-item" *ngFor="let element of itemList">
+  <mat-card-content>
+    <p class="lbl-title">Title: {{element.title}}</p>
+    <p class="lbl-description">Description: {{element.description}}</p>
+    <p class="lbl-price">Price: {{element.price}}</p>
+<!--    <img src="{{element.imageURL}}"/>-->
+    <img class="img-item" [src]="element.imageURL"/>
+    <div class="div-buttons">
+      <button class="btn-edit" mat-raised-button color="primary" (click)="onEdit()">Edit</button>
+      <button class="btn-delete" mat-raised-button color="accent" (click)="onDelete()">Delete</button>
+    </div>
+  </mat-card-content>
+</mat-card>
