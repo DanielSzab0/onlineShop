@@ -1,0 +1,61 @@
+<div class="div-page-auth div-background-image">
+  <mat-card *ngIf = "viewType == 'login' " class="card-container">
+    <mat-card-content>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error>{{getErrorMessage(email)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter password</mat-label>
+          <input matInput type="password" [formControl]="password" required>
+          <mat-error>{{getErrorMessage(password)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="div-buttons">
+        <button class="btn-register" mat-raised-button color="primary" (click)="onLogIn()">Log In</button>
+        <button class="btn-register" mat-button color="primary" (click)="setViewType('register')">Create an account?</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf = "viewType == 'register'" class="card-container">
+    <mat-card-content>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter user name</mat-label>
+          <input matInput placeholder="Popescu Mihai" [formControl]="userName" required>
+          <mat-error>{{getErrorMessage(userName)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error>{{getErrorMessage(email)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter password</mat-label>
+          <input matInput type="password" [formControl]="password" required>
+          <mat-error>{{getErrorMessage(password)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Retype password</mat-label>
+          <input matInput type="password" [formControl]="retypePassword" required>
+          <mat-error>{{getErrorMessage(retypePassword)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="div-buttons">
+        <button class="btn-register" mat-raised-button color="primary" (click)="onRegister()">Register</button>
+        <button class="btn-register" mat-button color="primary" (click)="setViewType('login')">Back to Log In</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

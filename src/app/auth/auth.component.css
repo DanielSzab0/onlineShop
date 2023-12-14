@@ -1,0 +1,39 @@
+.input-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}
+
+.card-container {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+  margin-bottom: auto;
+/*  vh = view heigh, iar 20 = 20%*/
+}
+
+.input-field {
+  width: 100%;
+}
+
+.div-buttons {
+  display: grid;
+}
+
+.btn-register {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-page-auth{
+  display: flex;
+}
+
+.div-background-image {
+  color:
+    #fff;
+  height: 100vh;
+  background-image: url("../../assets/background.jpg");
+  background-size: 100%;
+  background-size: cover;
+}
+

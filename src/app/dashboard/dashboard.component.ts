@@ -17,5 +17,10 @@ import {ListItemComponent} from "../list-item/list-item.component";
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
+  itemData: any = null;
+  public itemChanged(item: any) {
+    console.log("Item-ul a ajuns in Dasboard");
+    console.log(item);
+    this.itemData = item;
+  }
 }

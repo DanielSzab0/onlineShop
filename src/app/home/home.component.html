@@ -1,0 +1,38 @@
+<mat-drawer-container class="page-container" autosize>
+  <mat-drawer #drawer class="div-sidenav" mode="side">
+    <div class="div-img-logo">
+      <img class="img-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLNguRJlcleGuri-h9hQ5ZsPuygm2jKJ6Lg&usqp=CAU"/>
+    </div>
+    <mat-card>
+      <mat-card-content class="menu-card">
+        <p>Dashboard</p>
+      </mat-card-content>
+
+      <mat-card-content class="menu-card">
+        <p>Home</p>
+      </mat-card-content>
+
+      <mat-card-content class="menu-card">
+        <p>Daniel</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="div-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)= "drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Online Shop</span>
+      <span class="span-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>shopping_card</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    <app-list-item></app-list-item>
+  </div>
+</mat-drawer-container>
+
