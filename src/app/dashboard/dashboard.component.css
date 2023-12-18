@@ -1,0 +1,27 @@
+.span-spacer {
+  flex: 1 1 auto;
+}
+
+.div-content {
+  height: 100%;
+}
+
+.div-sidenav {
+  padding: 20px;
+  width: 300px;
+}
+
+.div-img-logo {
+  display: flex;
+}
+
+.img-logo {
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-card {
+  margin-bottom: 16px;
+}
+

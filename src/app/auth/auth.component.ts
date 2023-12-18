@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'app-auth',
@@ -18,11 +20,11 @@ export class AuthComponent {
   viewType: string = "login";
 
   userName: FormControl<string | null> = new FormControl('', [Validators.required]);
-  email: FormControl<string | null>  = new FormControl('', [Validators.required]);
-  password : FormControl<string | null> = new FormControl('', [Validators.required]);
+  email: FormControl<string | null> = new FormControl('', [Validators.required]);
+  password: FormControl<string | null> = new FormControl('', [Validators.required]);
   retypePassword: FormControl<string | null> = new FormControl('', [Validators.required]);
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router, private userService: UserService) {
 
   }
 
@@ -41,6 +43,15 @@ export class AuthComponent {
     };
     this.authService.login(body).subscribe((response: any) => {
       console.log(response);
+      if (response.status == 200) {
+        this.userService.setUser(response.data);
+        this.router.navigateByUrl('/dashboard')
+      } else {
+        alert(response.message);
+      }
+    }, (errorResponse) => {
+      console.log(errorResponse);
+      alert(errorResponse.error.message);
     })
   }
 

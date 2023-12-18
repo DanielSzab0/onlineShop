@@ -1,2 +1,51 @@
-<app-add-edit-item [item] = "itemData"></app-add-edit-item>
-<app-list-item (changedata)= "itemChanged($event)"></app-list-item>
+<mat-drawer-container class="page-container" autosize>
+  <mat-drawer #drawer class="div-sidenav" mode="side">
+    <div class="div-img-logo">
+      <img class="img-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLNguRJlcleGuri-h9hQ5ZsPuygm2jKJ6Lg&usqp=CAU"/>
+    </div>
+<!--    <mat-card class="menu-card" (click) = "onDashboardPage()">-->
+<!--      <mat-card-content>-->
+<!--        <p>Dashboard</p>-->
+<!--      </mat-card-content>-->
+<!--    </mat-card>-->
+
+    <mat-card class="menu-card" (click) = "onHomePage()">
+      <mat-card-content>
+        <button mat-button color="primary">Home</button>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content class="menu-card">
+        <p>Daniel</p>
+      </mat-card-content >
+    </mat-card>
+
+<!--    <mat-card class="menu-card" (click) = "onLogOut()">-->
+<!--      <mat-card-content>-->
+<!--        <p>Log Out</p>-->
+<!--      </mat-card-content>-->
+<!--    </mat-card>-->
+  </mat-drawer>
+
+  <div class="div-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)= "drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Dashboard</span>
+      <span class="span-spacer"></span>
+<!--      <button mat-icon-button>-->
+<!--        <mat-icon>shopping_card</mat-icon>-->
+<!--      </button>-->
+      <button mat-icon-button (click)= "onLogOut()">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <app-add-edit-item [item] = "itemData"></app-add-edit-item>
+    <app-list-item [showAdminControls] = "true" (changedata)= "itemChanged($event)"></app-list-item>
+
+  </div>
+</mat-drawer-container>
+
