@@ -4,11 +4,8 @@
 
 .card-container {
   width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20vh;
-  margin-bottom: auto;
-/*  vh = view heigh, iar 20 = 20%*/
+  margin: 20vh auto auto;
+  /*  vh = view height, iar 20 = 20%*/
 }
 
 .input-field {

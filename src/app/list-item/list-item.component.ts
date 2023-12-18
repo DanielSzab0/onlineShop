@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {booleanAttribute, Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
@@ -23,7 +23,7 @@ export class ListItemComponent {
   // }
 
   @Output() changedata = new EventEmitter<any>();
-  @Input("showAdminControls") showAdminControls: boolean = false;
+  @Input({transform: booleanAttribute, alias: "showAdminControls"}) showAdminControls: boolean = false;
   itemList: Array<any> = [];
 
   constructor(private itemService: ItemService) {
