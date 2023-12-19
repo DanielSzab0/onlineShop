@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {ItemService} from "../services/item.service";
+import {CartService} from "../services/cart.service";
 
 @Component({
   selector: 'app-list-item',
@@ -26,10 +27,10 @@ export class ListItemComponent {
   @Input({transform: booleanAttribute, alias: "showAdminControls"}) showAdminControls: boolean = false;
   itemList: Array<any> = [];
 
-  constructor(private itemService: ItemService) {
+  constructor(private itemService: ItemService, private cartService: CartService) {
     this.itemService.getItems().subscribe((items: Array<any>) =>{
       this.itemList = items;
-    })
+    });
   }
 
   onEdit(item: any): void {
@@ -43,6 +44,6 @@ export class ListItemComponent {
   }
 
   onBuy(item: any): void {
-
+    this.cartService.addToCart(item);
   }
 }
