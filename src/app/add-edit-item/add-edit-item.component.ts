@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
@@ -15,6 +15,8 @@ import {ItemService} from "../services/item.service";
   styleUrls: ['./add-edit-item.component.css']
 })
 export class AddEditItemComponent implements OnChanges {
+  @Output() viewTypeChange = new EventEmitter<string>();
+
   @Input("item") itemData: any = null;
   id: string = "";
   title : FormControl<string | null> = new FormControl('', [Validators.required]);
@@ -67,5 +69,9 @@ export class AddEditItemComponent implements OnChanges {
     this.imageUrl = new FormControl("", [Validators.required]);
     this.price = new FormControl("", [Validators.required]);
     this.itemData = null;
+  }
+
+  public setViewType(viewType: string) {
+    this.viewTypeChange.emit(viewType);
   }
 }

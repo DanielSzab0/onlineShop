@@ -7,7 +7,7 @@ import {BehaviorSubject} from "rxjs";
 })
 export class ItemService {
 
-  private itemObservable = new BehaviorSubject<Array<any>>([])
+  private itemObservable = new BehaviorSubject<Array<any>>([]);
 
   constructor(private httpClient: HttpClient) {
     this.readItems();

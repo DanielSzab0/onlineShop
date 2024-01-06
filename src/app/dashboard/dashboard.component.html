@@ -43,8 +43,13 @@
       </button>
     </mat-toolbar>
 
-    <app-add-edit-item [item] = "itemData"></app-add-edit-item>
-    <app-list-item [showAdminControls] = "true" (changedata)= "itemChanged($event)"></app-list-item>
+    <div class="user-item-edit-containers">
+      <app-add-edit-item *ngIf = "viewType === 'edit-item'" (viewTypeChange)= "setViewType($event)" [item]= "itemData"></app-add-edit-item>
+      <app-add-edit-user *ngIf = "viewType === 'edit-user'" (viewTypeChange)= "setViewType($event)" [user]= "userData"></app-add-edit-user>
+    </div>
+
+    <app-list-user *ngIf = "viewType === 'edit-user'" [showAdminControls]= "true" (changeData)="userChanged($event)"></app-list-user>
+    <app-list-item *ngIf = "viewType === 'edit-item'" [showAdminControls]= "true" (changeData)= "itemChanged($event)"></app-list-item>
 
   </div>
 </mat-drawer-container>

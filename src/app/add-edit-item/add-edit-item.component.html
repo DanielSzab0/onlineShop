@@ -1,35 +1,37 @@
 <mat-card class="card-container">
   <mat-card-content>
+    <span>Item edit form</span>
     <div class="input-container">
       <mat-form-field class="input-field">
         <mat-label>Enter title</mat-label>
-        <input matInput placeholder="title" [formControl]="title" required>
+        <input matInput  [formControl]="title" required>
         <mat-error>{{getErrorMessage(title)}}</mat-error>
       </mat-form-field>
     </div>
     <div class="input-container">
       <mat-form-field class="input-field">
         <mat-label>Enter description</mat-label>
-        <input matInput placeholder="description" [formControl]="description" required>
+        <input matInput [formControl]="description" required>
         <mat-error>{{getErrorMessage(description)}}</mat-error>
       </mat-form-field>
     </div>
     <div class="input-container">
       <mat-form-field class="input-field">
         <mat-label>Enter image URL</mat-label>
-        <input matInput placeholder="image URL" [formControl]="imageUrl" required>
+        <input matInput [formControl]="imageUrl" required>
         <mat-error>{{getErrorMessage(imageUrl)}}</mat-error>
       </mat-form-field>
     </div>
     <div class="input-container">
       <mat-form-field class="input-field">
         <mat-label>Enter price</mat-label>
-        <input matInput placeholder="100" [formControl]="price" required>
+        <input matInput [formControl]="price" required>
         <mat-error>{{getErrorMessage(price)}}</mat-error>
       </mat-form-field>
     </div>
     <div class="div-buttons">
       <button class="btn-save" mat-raised-button color="primary" (click)="onSave()">Save</button>
+      <button class="btn-register" mat-button color="primary" (click)="setViewType('edit-user')">Switch to edit user</button>
     </div>
 
   </mat-card-content>

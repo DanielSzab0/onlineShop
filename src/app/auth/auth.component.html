@@ -4,7 +4,7 @@
       <div class="input-container">
         <mat-form-field class="input-field">
           <mat-label>Enter email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <input matInput [formControl]="email" required>
           <mat-error>{{getErrorMessage(email)}}</mat-error>
         </mat-form-field>
       </div>
@@ -27,14 +27,14 @@
       <div class="input-container">
         <mat-form-field class="input-field">
           <mat-label>Enter user name</mat-label>
-          <input matInput placeholder="Popescu Mihai" [formControl]="userName" required>
+          <input matInput [formControl]="userName" required>
           <mat-error>{{getErrorMessage(userName)}}</mat-error>
         </mat-form-field>
       </div>
       <div class="input-container">
         <mat-form-field class="input-field">
           <mat-label>Enter email</mat-label>
-          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <input matInput [formControl]="email" required>
           <mat-error>{{getErrorMessage(email)}}</mat-error>
         </mat-form-field>
       </div>

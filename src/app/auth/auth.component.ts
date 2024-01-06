@@ -67,7 +67,7 @@ export class AuthComponent {
     } else {
       this.authService.register(body).subscribe((response: any) => {
         console.log(response);
-      })
+      });
     }
   }
 

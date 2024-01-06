@@ -9,11 +9,12 @@ import {MatCardModule} from "@angular/material/card";
 import {Router} from "@angular/router";
 import {CartButtonComponent} from "../cart-button/cart-button.component";
 import {MatDialogModule} from "@angular/material/dialog";
+import {ListUserComponent} from "../list-user/list-user.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, ListItemComponent, MatSidenavModule, MatCardModule, CartButtonComponent, MatDialogModule],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, MatButtonModule, ListItemComponent, MatSidenavModule, MatCardModule, CartButtonComponent, MatDialogModule, ListUserComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

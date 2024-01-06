@@ -30,7 +30,6 @@
     #fff;
   height: 100vh;
   background-image: url("../../assets/background.jpg");
-  background-size: 100%;
   background-size: cover;
 }
 

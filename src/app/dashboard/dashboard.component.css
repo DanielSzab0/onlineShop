@@ -25,3 +25,7 @@
   margin-bottom: 16px;
 }
 
+.user-item-edit-containers {
+  display: flex;
+}
+

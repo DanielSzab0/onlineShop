@@ -13,6 +13,8 @@ import {CartService} from "../services/cart.service";
   styleUrls: ['./list-item.component.css']
 })
 export class ListItemComponent {
+  viewType: string = "edit-item";
+
   // isVisible : boolean = true
   // title: string = "Angular"
   // onChange() : void {
@@ -23,7 +25,7 @@ export class ListItemComponent {
   //   }
   // }
 
-  @Output() changedata = new EventEmitter<any>();
+  @Output() changeData = new EventEmitter<any>();
   @Input({transform: booleanAttribute, alias: "showAdminControls"}) showAdminControls: boolean = false;
   itemList: Array<any> = [];
 
@@ -35,7 +37,7 @@ export class ListItemComponent {
 
   onEdit(item: any): void {
     console.log("S-a apasat onEdit");
-    this.changedata.emit(item); //metoda emit() ne ajuta sa scoatem din componenta obiectul item
+    this.changeData.emit(item); //metoda emit() ne ajuta sa scoatem din componenta obiectul item
   }
 
   onDelete(item: any): void {

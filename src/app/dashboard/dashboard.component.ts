@@ -12,16 +12,21 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {Router} from "@angular/router";
+import {AddEditUserComponent} from "../add-edit-user/add-edit-user.component";
+import {ListUserComponent} from "../list-user/list-user.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-    imports: [CommonModule, MatInputModule, ReactiveFormsModule, MatCardModule, MatButtonModule, AddEditItemComponent, ListItemComponent, MatIconModule, MatSidenavModule, MatToolbarModule],
+  imports: [CommonModule, MatInputModule, ReactiveFormsModule, MatCardModule, MatButtonModule, AddEditItemComponent, ListItemComponent, MatIconModule, MatSidenavModule, MatToolbarModule, AddEditUserComponent, ListUserComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
   itemData: any = null;
+  userData: any = null;
+
+  viewType: string = "edit-item"
 
   constructor(private router: Router) {
 
@@ -31,6 +36,12 @@ export class DashboardComponent {
     console.log("Item-ul a ajuns in Dasboard");
     console.log(item);
     this.itemData = item;
+  }
+
+  public userChanged(user: any) {
+    console.log("User-ul a ajuns in Dashboard");
+    console.log(user);
+    this.userData = user;
   }
 
   onDashboardPage(): void {
@@ -43,5 +54,9 @@ export class DashboardComponent {
 
   onLogOut(): void {
     this.router.navigateByUrl('/auth');
+  }
+
+  public setViewType(viewType: string) {
+     this.viewType = viewType;
   }
 }

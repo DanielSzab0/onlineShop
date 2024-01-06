@@ -1,0 +1,37 @@
+  <mat-card class= "card-container">
+    <mat-card-content>
+      <span>User edit form</span>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter user name</mat-label>
+          <input matInput [formControl]="userName" required>
+          <mat-error>{{getErrorMessage(userName)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter email</mat-label>
+          <input matInput [formControl]="email" required>
+          <mat-error>{{getErrorMessage(email)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Enter password</mat-label>
+          <input matInput type="password" [formControl]="password" required>
+          <mat-error>{{getErrorMessage(password)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <mat-form-field class="input-field">
+          <mat-label>Retype password</mat-label>
+          <input matInput type="password" [formControl]="retypePassword" required>
+          <mat-error>{{getErrorMessage(retypePassword)}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="div-buttons">
+        <button class="btn-save" mat-raised-button color="primary" (click)="onSave()">Save</button>
+        <button class="btn-register" mat-button color="primary" (click)="setViewType('edit-item')">Switch to edit item</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
