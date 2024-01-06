@@ -15,16 +15,6 @@ import {CartService} from "../services/cart.service";
 export class ListItemComponent {
   viewType: string = "edit-item";
 
-  // isVisible : boolean = true
-  // title: string = "Angular"
-  // onChange() : void {
-  //   if (this.isVisible) {
-  //     this.isVisible = false;
-  //   } else {
-  //     this.isVisible = true;
-  //   }
-  // }
-
   @Output() changeData = new EventEmitter<any>();
   @Input({transform: booleanAttribute, alias: "showAdminControls"}) showAdminControls: boolean = false;
   itemList: Array<any> = [];
@@ -37,7 +27,7 @@ export class ListItemComponent {
 
   onEdit(item: any): void {
     console.log("S-a apasat onEdit");
-    this.changeData.emit(item); //metoda emit() ne ajuta sa scoatem din componenta obiectul item
+    this.changeData.emit(item);
   }
 
   onDelete(item: any): void {

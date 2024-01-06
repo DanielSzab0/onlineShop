@@ -25,7 +25,7 @@ export class CartButtonComponent {
   openCartDialog() {
     const dialogRef = this.dialog.open(DialogCartComponent);
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(result); //daca dorim sa efectuam actiuni dupa inchiderea dialogului
+      console.log(result);
     });
   }
 }

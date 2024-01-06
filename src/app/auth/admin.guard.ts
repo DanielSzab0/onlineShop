@@ -13,7 +13,7 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let user = this.userService.getUser();
 
-    if (user != null) { // aici putem verifica daca utilizatorul logat este admin sau nu
+    if (user != null) {
       return true;
     } else {
       this.router.navigateByUrl('/auth');

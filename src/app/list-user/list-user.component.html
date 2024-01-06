@@ -4,7 +4,7 @@
       <p class="lbl-userName">User name: {{element.userName}}</p>
       <p class="lbl-email">Email: {{element.email}}</p>
       <div class="div-buttons" *ngIf = "showAdminControls">
-<!--        <button class="btn-edit" mat-raised-button color="primary" (click)="onEdit(element)">Edit</button>-->
+        <button class="btn-edit" mat-raised-button color="primary" (click)="onEdit(element)">Edit</button>
         <button class="btn-delete" mat-raised-button color="accent" (click)="onDelete(element)">Delete</button>
       </div>
       <div class="div-buttons" *ngIf = "!showAdminControls">

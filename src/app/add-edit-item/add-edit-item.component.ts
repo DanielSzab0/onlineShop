@@ -51,7 +51,6 @@ export class AddEditItemComponent implements OnChanges {
       "description": this.description.getRawValue()!,
       "imageUrl": this.imageUrl.getRawValue()!,
       "price": this.price.getRawValue()!
-      //semnul ! asigura compilatorul ca valoarea returnata este diferita de null (null operator)
     };
     console.log(item);
     if (this.id == "") {
